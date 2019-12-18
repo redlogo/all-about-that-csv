@@ -2,7 +2,7 @@ package DataGenerator.HarryPotter;
 
 import DataGenerator.Utilities.TrimmingUtilities;
 
-public class Entry {
+public class Entry implements DataGenerator.Interfaces.Entry {
     private String book;
     private String character;
     private String location;
@@ -46,6 +46,7 @@ public class Entry {
         this.quote = quote;
     }
 
+    @Override
     public void trim() {
         book = trimmingUtilities.trim(book);
         character = trimmingUtilities.trim(character);
@@ -53,6 +54,7 @@ public class Entry {
         quote = trimmingUtilities.trim(quote);
     }
 
+    @Override
     public String toSimpleCSVFormatString() {
         return book + "," +
                 character + "," +

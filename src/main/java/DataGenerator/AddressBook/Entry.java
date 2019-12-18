@@ -2,7 +2,7 @@ package DataGenerator.AddressBook;
 
 import DataGenerator.Utilities.TrimmingUtilities;
 
-public class Entry {
+public class Entry implements DataGenerator.Interfaces.Entry {
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -82,6 +82,7 @@ public class Entry {
         this.country = country;
     }
 
+    @Override
     public void trim() {
         firstName = trimmingUtilities.trim(firstName);
         lastName = trimmingUtilities.trim(lastName);
@@ -93,6 +94,7 @@ public class Entry {
         country = trimmingUtilities.trim(country);
     }
 
+    @Override
     public String toSimpleCSVFormatString() {
         return firstName + "," +
                 lastName + "," +
