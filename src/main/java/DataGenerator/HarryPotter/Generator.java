@@ -12,12 +12,17 @@ public class Generator {
         faker = new Faker();
     }
 
-    public Entry genOneEntry() {
+    private Entry genHeaderEntry() {
         Entry entry = new Entry();
-        faker.harryPotter().book();
-        faker.harryPotter().character();
-        faker.harryPotter().location();
-        faker.harryPotter().quote();
+        entry.setBook("book");
+        entry.setCharacter("character");
+        entry.setLocation("location");
+        entry.setQuote("quote");
+        return entry;
+    }
+
+    private Entry genOneEntry() {
+        Entry entry = new Entry();
         entry.setBook(faker.harryPotter().book());
         entry.setCharacter(faker.harryPotter().character());
         entry.setLocation(faker.harryPotter().location());
@@ -28,6 +33,7 @@ public class Generator {
 
     public List<Entry> genNEntries(int n) {
         List<Entry> list = new ArrayList<>();
+        list.add(genHeaderEntry());
         for (int i = 0; i < n; i++) {
             list.add(genOneEntry());
         }

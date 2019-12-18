@@ -1,7 +1,5 @@
 package FileWriter;
 
-import DataGenerator.AddressBook.Entry;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,10 +11,22 @@ public class CSVWriter {
 
     }
 
-    public void writeSimpleCSVWithEntries(List<Entry> list, String path) {
+    public void writeSimpleCSVWithAddressBookEntries(List<DataGenerator.AddressBook.Entry> list, String path) {
         try {
             FileWriter fileWriter = new FileWriter(new File(path));
-            for (Entry entry : list) {
+            for (DataGenerator.AddressBook.Entry entry : list) {
+                fileWriter.write(entry.toSimpleCSVFormatString() + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeSimpleCSVWithHarryPotterEntries(List<DataGenerator.HarryPotter.Entry> list, String path) {
+        try {
+            FileWriter fileWriter = new FileWriter(new File(path));
+            for (DataGenerator.HarryPotter.Entry entry : list) {
                 fileWriter.write(entry.toSimpleCSVFormatString() + "\n");
             }
             fileWriter.close();
