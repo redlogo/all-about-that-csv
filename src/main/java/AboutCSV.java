@@ -6,4 +6,8 @@ public class AboutCSV {
     public GenCSV genCSV() {
         return new GenCSV();
     }
+
+    public ReadCSV readCSV() {
+        return new ReadCSV();
+    }
 }

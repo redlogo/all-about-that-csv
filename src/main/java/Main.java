@@ -5,7 +5,9 @@ public class Main {
         PathManager pathManager = new PathManager();
         AboutCSV aboutCSV = new AboutCSV();
 
-        aboutCSV.genCSV().genAddressBookTrimmed(2000, pathManager.getTestCSVFile1());
-        aboutCSV.genCSV().genHarryPotterTrimmed(2000, pathManager.getTestCSVFile2());
+        aboutCSV.genCSV().genAddressBookRaw(1000, pathManager.getOutputTestCSVFile1());
+        aboutCSV.genCSV().genHarryPotterRaw(1000, pathManager.getOutputTestCSVFile2());
+
+        aboutCSV.readCSV();
     }
 }
