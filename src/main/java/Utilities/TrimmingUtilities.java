@@ -1,4 +1,4 @@
-package DataGenerator.Utilities;
+package Utilities;
 
 public class TrimmingUtilities {
 

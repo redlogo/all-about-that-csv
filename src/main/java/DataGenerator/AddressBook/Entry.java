@@ -1,6 +1,6 @@
 package DataGenerator.AddressBook;
 
-import DataGenerator.Utilities.TrimmingUtilities;
+import Utilities.TrimmingUtilities;
 
 public class Entry implements DataGenerator.Interfaces.Entry {
     private String firstName;
