@@ -24,4 +24,16 @@ public class CSVWriter {
             e.printStackTrace();
         }
     }
+
+    public void writeRawCSVWithEntries(List<Entry> list, String path) {
+        try {
+            FileWriter fileWriter = new FileWriter(new File(path));
+            for (Entry entry : list) {
+                fileWriter.write(entry.toRawCSVFormatString() + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

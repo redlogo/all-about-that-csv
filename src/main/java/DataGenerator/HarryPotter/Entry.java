@@ -2,6 +2,8 @@ package DataGenerator.HarryPotter;
 
 import Utilities.TrimmingUtilities;
 
+import java.util.Random;
+
 public class Entry implements DataGenerator.Interfaces.Entry {
     private String book;
     private String character;
@@ -52,6 +54,30 @@ public class Entry implements DataGenerator.Interfaces.Entry {
         character = trimmingUtilities.trim(character);
         location = trimmingUtilities.trim(location);
         quote = trimmingUtilities.trim(quote);
+    }
+
+    @Override
+    public String genSpaces() {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        int genCount = random.nextInt(5);
+        for (int i = 0; i < genCount; i++) {
+            int genType = random.nextInt(1);
+            if (genType == 0) {
+                stringBuilder.append(" ");
+            } else {
+                stringBuilder.append("\t");
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String toRawCSVFormatString() {
+        return genSpaces() + book + genSpaces() + "," +
+                genSpaces() + character + genSpaces() + "," +
+                genSpaces() + location + genSpaces() + "," +
+                genSpaces() + quote + genSpaces();
     }
 
     @Override

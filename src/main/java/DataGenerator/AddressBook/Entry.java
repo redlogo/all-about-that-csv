@@ -2,6 +2,8 @@ package DataGenerator.AddressBook;
 
 import Utilities.TrimmingUtilities;
 
+import java.util.Random;
+
 public class Entry implements DataGenerator.Interfaces.Entry {
     private String firstName;
     private String lastName;
@@ -104,6 +106,34 @@ public class Entry implements DataGenerator.Interfaces.Entry {
                 state + "," +
                 zipCode + "," +
                 country;
+    }
+
+    @Override
+    public String genSpaces() {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        int genCount = random.nextInt(3);
+        for (int i = 0; i < genCount; i++) {
+            int genType = random.nextInt(2);
+            if (genType == 0) {
+                stringBuilder.append(" ");
+            } else {
+                stringBuilder.append("\t");
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String toRawCSVFormatString() {
+        return genSpaces() + firstName + genSpaces() + "," +
+                genSpaces() + lastName + genSpaces() + "," +
+                genSpaces() + phoneNumber + genSpaces() + "," +
+                genSpaces() + streetName + genSpaces() + "," +
+                genSpaces() + city + genSpaces() + "," +
+                genSpaces() + state + genSpaces() + "," +
+                genSpaces() + zipCode + genSpaces() + "," +
+                genSpaces() + country+ genSpaces();
     }
 
     @Override

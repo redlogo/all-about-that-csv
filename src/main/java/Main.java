@@ -5,7 +5,7 @@ public class Main {
         PathManager pathManager = new PathManager();
         AatCSV aatCSV = new AatCSV();
 
-        aatCSV.dataGen().writeAddressBookSimpleCSV(2000, pathManager.getTestCSVFile1());
-        aatCSV.dataGen().writeHarryPotterSimpleCSV(2000, pathManager.getTestCSVFile2());
+        aatCSV.dataGen().writeAddressBookRawCSV(2000, pathManager.getTestCSVFile1());
+        aatCSV.dataGen().writeHarryPotterRawCSV(2000, pathManager.getTestCSVFile2());
     }
 }
