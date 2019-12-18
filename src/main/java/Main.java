@@ -3,9 +3,9 @@ import Utilities.PathManager;
 public class Main {
     public static void main(String[] args) {
         PathManager pathManager = new PathManager();
-        AatCSV aatCSV = new AatCSV();
+        AboutCSV aboutCSV = new AboutCSV();
 
-        aatCSV.dataGen().writeAddressBookRawCSV(2000, pathManager.getTestCSVFile1());
-        aatCSV.dataGen().writeHarryPotterRawCSV(2000, pathManager.getTestCSVFile2());
+        aboutCSV.genCSV().genAddressBookRaw(2000, pathManager.getTestCSVFile1());
+        aboutCSV.genCSV().genHarryPotterRaw(2000, pathManager.getTestCSVFile2());
     }
 }
