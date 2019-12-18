@@ -1,10 +1,18 @@
+import DataGenerator.AddressBook.Entry;
 import DataGenerator.AddressBook.Generator;
+import FileWriter.CSVWriter;
+import Utilities.PathManager;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        PathManager pathManager = new PathManager();
+
         Generator generator = new Generator();
-        System.out.println(generator.genOneEntry().toSimpleCSVFormatString());
-        DataGenerator.HarryPotter.Generator generator1 = new DataGenerator.HarryPotter.Generator();
-        System.out.println(generator1.genOneEntry().toSimpleCSVFormatString());
+        List<Entry> list = generator.genNEntries(1000);
+        CSVWriter csvWriter = new CSVWriter();
+        csvWriter.writeSimpleCSVWithEntries(list, pathManager.getTestCSVFile());
+
     }
 }
