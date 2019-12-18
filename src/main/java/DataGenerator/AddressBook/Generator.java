@@ -12,7 +12,20 @@ public class Generator {
         faker = new Faker();
     }
 
-    public Entry genOneEntry() {
+    private Entry genHeaderEntry() {
+        Entry entry = new Entry();
+        entry.setFirstName("firstName");
+        entry.setLastName("lastName");
+        entry.setPhoneNumber("phoneNumber");
+        entry.setStreetName("streetName");
+        entry.setCity("city");
+        entry.setState("state");
+        entry.setZipCode("zipCode");
+        entry.setCountry("country");
+        return entry;
+    }
+
+    private Entry genOneEntry() {
         Entry entry = new Entry();
         entry.setFirstName(faker.name().firstName());
         entry.setLastName(faker.name().lastName());
@@ -28,6 +41,7 @@ public class Generator {
 
     public List<Entry> genNEntries(int n) {
         List<Entry> list = new ArrayList<>();
+        list.add(genHeaderEntry());
         for (int i = 0; i < n; i++) {
             list.add(genOneEntry());
         }
