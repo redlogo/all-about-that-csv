@@ -97,7 +97,7 @@ public class Entry implements DataGenerator.Interfaces.Entry {
     }
 
     @Override
-    public String toSimpleCSVFormatString() {
+    public String toTrimmedCSVFormatString() {
         return firstName + "," +
                 lastName + "," +
                 phoneNumber + "," +
@@ -133,7 +133,7 @@ public class Entry implements DataGenerator.Interfaces.Entry {
                 genSpaces() + city + genSpaces() + "," +
                 genSpaces() + state + genSpaces() + "," +
                 genSpaces() + zipCode + genSpaces() + "," +
-                genSpaces() + country+ genSpaces();
+                genSpaces() + country + genSpaces();
     }
 
     @Override

@@ -3,7 +3,7 @@ package DataGenerator.Interfaces;
 public interface Entry {
     void trim();
 
-    String toSimpleCSVFormatString();
+    String toTrimmedCSVFormatString();
 
     String genSpaces();
 

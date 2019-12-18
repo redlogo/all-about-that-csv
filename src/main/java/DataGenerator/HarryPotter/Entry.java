@@ -57,6 +57,14 @@ public class Entry implements DataGenerator.Interfaces.Entry {
     }
 
     @Override
+    public String toTrimmedCSVFormatString() {
+        return book + "," +
+                character + "," +
+                location + "," +
+                quote;
+    }
+
+    @Override
     public String genSpaces() {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();
@@ -78,14 +86,6 @@ public class Entry implements DataGenerator.Interfaces.Entry {
                 genSpaces() + character + genSpaces() + "," +
                 genSpaces() + location + genSpaces() + "," +
                 genSpaces() + quote + genSpaces();
-    }
-
-    @Override
-    public String toSimpleCSVFormatString() {
-        return book + "," +
-                character + "," +
-                location + "," +
-                quote;
     }
 
     @Override
