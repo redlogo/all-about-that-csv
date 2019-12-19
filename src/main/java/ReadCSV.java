@@ -1,4 +1,7 @@
+import DataStorage.Entry;
 import FileReader.CSVReader;
+
+import java.util.List;
 
 public class ReadCSV {
     private CSVReader csvReader;
@@ -8,6 +11,9 @@ public class ReadCSV {
     }
 
     public void readCSVWithHeader(String targetFilePath) {
-        csvReader.readCSVWithHeader(targetFilePath);
+        List<Entry> res = csvReader.readCSVWithHeader(targetFilePath);
+        for (Entry entry : res) {
+            System.out.println(entry);
+        }
     }
 }

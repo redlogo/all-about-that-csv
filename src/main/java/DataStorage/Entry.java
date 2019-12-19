@@ -18,9 +18,9 @@ public class Entry implements Interfaces.Entry {
         trimmingUtilities = new TrimmingUtilities();
     }
 
-    public void addToContent(String[] strings) {
-        for (String s : strings) {
-            contents.add(s);
+    public void addToContent(List<String> strings) {
+        contents = strings;
+        for (String s : contents) {
             trimmedContents.add(trimmingUtilities.trim(s));
         }
     }
@@ -67,5 +67,21 @@ public class Entry implements Interfaces.Entry {
             }
         }
         return stringBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                // "contents=" + contents +
+                " trimmedContents=" + trimmedContents +
+                '}';
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public List<String> getTrimmedContents() {
+        return trimmedContents;
     }
 }
