@@ -15,15 +15,15 @@ public class ConvertCSV {
     }
 
     public void convertCSV_toCompact(String fromFilePath, String toFilePath) {
-        System.out.println("Convert CSV to Compact Format from: " + fromFilePath);
+        System.out.println("\nConvert CSV to Compact Format from: " + fromFilePath);
         System.out.println("                                to: " + toFilePath);
         List<Entry> res = new ArrayList<>(csvReader.parseCSV(fromFilePath));
         csvWriter.writeTrimmedCSVWithEntries(res, toFilePath);
-        System.out.println("Convert CSV to Compact Format Done");
+        System.out.println("Convert CSV to Compact Format Done\n");
     }
 
     public void convertCSV_toTabulated(String fromFilePath, String toFilePath) {
-        System.out.println("Convert CSV to Tabulated Format from: " + fromFilePath);
+        System.out.println("\nConvert CSV to Tabulated Format from: " + fromFilePath);
         System.out.println("                                  to: " + toFilePath);
         List<DataStorage.Entry> res = csvReader.parseCSV(fromFilePath);
         // get all cols max widths
@@ -45,6 +45,6 @@ public class ConvertCSV {
         }
         List<Entry> finals = new ArrayList<>(res);
         csvWriter.writeTabulatedCSVWithEntries(finals, toFilePath);
-        System.out.println("Convert CSV to Tabulated Format Done");
+        System.out.println("Convert CSV to Tabulated Format Done\n");
     }
 }

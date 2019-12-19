@@ -12,7 +12,7 @@ public class ReadCSV {
     }
 
     public void printCSV_toTabulated(String targetFilePath) {
-        System.out.println("Print CSV to Tabulated Format from: " + targetFilePath);
+        System.out.println("\nPrint CSV to Tabulated Format from: " + targetFilePath);
         System.out.println("-------------start---------------");
         List<Entry> res = csvReader.parseCSV(targetFilePath);
         // get all cols max widths
@@ -37,29 +37,29 @@ public class ReadCSV {
             System.out.println(entry.toTabulatedCSVFormatString());
         }
         System.out.println("--------------end----------------");
-        System.out.println("Print CSV to Tabulated Format Done");
+        System.out.println("Print CSV to Tabulated Format Done\n");
     }
 
     public void printCSV_toCompact(String targetFilePath) {
-        System.out.println("Print CSV to Compact Format from: " + targetFilePath);
+        System.out.println("\nPrint CSV to Compact Format from: " + targetFilePath);
         System.out.println("-------------start---------------");
         List<Entry> res = csvReader.parseCSV(targetFilePath);
         for (Entry entry : res) {
             System.out.println(entry.toTrimmedCSVFormatString());
         }
         System.out.println("--------------end----------------");
-        System.out.println("Print CSV to Compact Format Done");
+        System.out.println("Print CSV to Compact Format Done\n");
     }
 
     public void printCSV_toRaw(String targetFilePath) {
-        System.out.println("Print CSV as Raw Format from: " + targetFilePath);
+        System.out.println("\nPrint CSV as Raw Format from: " + targetFilePath);
         System.out.println("-------------start---------------");
         List<Entry> res = csvReader.parseCSV(targetFilePath);
         for (Entry entry : res) {
             System.out.println(entry.toRawCSVFormatString());
         }
         System.out.println("--------------end----------------");
-        System.out.println("Print CSV as Raw Format Done");
+        System.out.println("Print CSV as Raw Format Done\n");
     }
 
 }

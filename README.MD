@@ -41,9 +41,9 @@ Rheba,Cruickshank,(645) 181-9617 x04329,Guadalupe Forges,South Jerilyntown,Michi
 Kendall,Stiedemann,837.645.6997 x11053,Oren Mission,Port Easter,South Dakota,08358,Senegal
 Angella,Leffler,888-744-5550,Macejkovic Crest,Pollichborough,Kentucky,40845,Bosnia and Herzegovina
 --------------end----------------
+Print CSV to Compact Format Done
 
 Tabulated:
-Print CSV to Compact Format Done
 Print CSV to Tabulated Format from: /Users/jibinzou/Documents/all-about-that-csv/files/input/testCSVFile1.csv
 -------------start---------------
  firstName , lastName            , phoneNumber           , streetName       , city               , state          , zipCode    , country                
