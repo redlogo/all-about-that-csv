@@ -13,6 +13,18 @@ public class CSVWriter {
 
     }
 
+    public void writeRawCSVWithEntries(List<Entry> list, String path) {
+        try {
+            FileWriter fileWriter = new FileWriter(new File(path));
+            for (Entry entry : list) {
+                fileWriter.write(entry.toRawCSVFormatString() + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void writeTrimmedCSVWithEntries(List<Entry> list, String path) {
         try {
             FileWriter fileWriter = new FileWriter(new File(path));
@@ -25,11 +37,11 @@ public class CSVWriter {
         }
     }
 
-    public void writeRawCSVWithEntries(List<Entry> list, String path) {
+    public void writeTabulatedCSVWithEntries(List<Entry> list, String path) {
         try {
             FileWriter fileWriter = new FileWriter(new File(path));
             for (Entry entry : list) {
-                fileWriter.write(entry.toRawCSVFormatString() + "\n");
+                fileWriter.write(entry.toTabulatedCSVFormatString() + "\n");
             }
             fileWriter.close();
         } catch (IOException e) {

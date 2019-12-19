@@ -9,24 +9,53 @@ import java.util.Random;
 public class Entry implements Interfaces.Entry {
     private List<String> contents;
     private List<String> trimmedContents;
+    private List<String> tabulatedContents;
 
     private TrimmingUtilities trimmingUtilities;
 
     public Entry() {
         contents = new ArrayList<>();
         trimmedContents = new ArrayList<>();
+        tabulatedContents = new ArrayList<>();
         trimmingUtilities = new TrimmingUtilities();
     }
 
-    public void addToContent(List<String> strings) {
+    public int size() {
+        return contents.size();
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public List<String> getTrimmedContents() {
+        return trimmedContents;
+    }
+
+    public void addToContents(List<String> strings) {
         contents = strings;
         for (String s : contents) {
             trimmedContents.add(trimmingUtilities.trim(s));
         }
     }
 
-    public int size() {
-        return contents.size();
+    public void tabulateContents(List<Integer> widths) {
+        for (int i = 0; i < widths.size(); i++) {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(" ");
+            if (size() - 1 >= i) {
+                stringBuilder.append(trimmedContents.get(i));
+                for (int j = 0; j < widths.get(i) - trimmedContents.get(i).length(); j++) {
+                    stringBuilder.append(" ");
+                }
+            } else {
+                for (int j = 0; j < widths.get(i); j++) {
+                    stringBuilder.append(" ");
+                }
+            }
+            stringBuilder.append(" ");
+            tabulatedContents.add(stringBuilder.toString());
+        }
     }
 
     @Override
@@ -70,18 +99,22 @@ public class Entry implements Interfaces.Entry {
     }
 
     @Override
+    public String toTabulatedCSVFormatString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < tabulatedContents.size(); i++) {
+            stringBuilder.append(tabulatedContents.get(i));
+            if (i != tabulatedContents.size() - 1) {
+                stringBuilder.append(',');
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    @Override
     public String toString() {
         return "Entry{" +
                 // "contents=" + contents +
                 " trimmedContents=" + trimmedContents +
                 '}';
-    }
-
-    public List<String> getContents() {
-        return contents;
-    }
-
-    public List<String> getTrimmedContents() {
-        return trimmedContents;
     }
 }

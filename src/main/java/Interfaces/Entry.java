@@ -1,9 +1,12 @@
 package Interfaces;
 
 public interface Entry {
-    String toTrimmedCSVFormatString();
 
     String genSpaces();
 
     String toRawCSVFormatString();
+
+    String toTrimmedCSVFormatString();
+
+    String toTabulatedCSVFormatString();
 }

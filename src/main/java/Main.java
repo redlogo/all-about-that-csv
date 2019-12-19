@@ -5,9 +5,14 @@ public class Main {
         PathManager pathManager = new PathManager();
         AboutCSV aboutCSV = new AboutCSV();
 
-        aboutCSV.genCSV().genAddressBookRaw(1000, pathManager.getOutputTestCSVFile1());
-        aboutCSV.genCSV().genHarryPotterRaw(1000, pathManager.getOutputTestCSVFile2());
+        aboutCSV.genCSV().genAddressBookRaw(10, pathManager.getOutputTestCSVFile1());
+        aboutCSV.genCSV().genHarryPotterRaw(10, pathManager.getOutputTestCSVFile2());
 
-        aboutCSV.readCSV().readCSVWithHeader(pathManager.getTmp_testCSVFile1());
+        aboutCSV.readCSV().printCSV_toRaw(pathManager.getInputTestCSVFile1());
+        aboutCSV.readCSV().printCSV_toCompact(pathManager.getInputTestCSVFile1());
+        aboutCSV.readCSV().printCSV_toTabulated(pathManager.getInputTestCSVFile1());
+
+        aboutCSV.convertCSV().convertCSV_toCompact(pathManager.getInputTestCSVFile1(), pathManager.getOutputTestCSVFile1());
+        aboutCSV.convertCSV().convertCSV_toTabulated(pathManager.getInputTestCSVFile1(), pathManager.getOutputTestCSVFile2());
     }
 }

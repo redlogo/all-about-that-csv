@@ -1,6 +1,7 @@
 import DataStorage.Entry;
 import FileReader.CSVReader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReadCSV {
@@ -10,10 +11,55 @@ public class ReadCSV {
         csvReader = new CSVReader();
     }
 
-    public void readCSVWithHeader(String targetFilePath) {
-        List<Entry> res = csvReader.readCSVWithHeader(targetFilePath);
+    public void printCSV_toTabulated(String targetFilePath) {
+        System.out.println("Print CSV to Tabulated Format from: " + targetFilePath);
+        System.out.println("-------------start---------------");
+        List<Entry> res = csvReader.parseCSV(targetFilePath);
+        // get all cols max widths
+        List<Integer> widths = new ArrayList<>();
         for (Entry entry : res) {
-            System.out.println(entry);
+            List<String> trimmedContents = entry.getTrimmedContents();
+            for (int i = 0; i < trimmedContents.size(); i++) {
+                int len = trimmedContents.get(i).length();
+                if (widths.size() - 1 < i) {
+                    widths.add(len);
+                } else {
+                    widths.set(i, Math.max(widths.get(i), len));
+                }
+            }
         }
+        // tabulate each entry
+        for (Entry entry : res) {
+            entry.tabulateContents(widths);
+        }
+        // print
+        for (Entry entry : res) {
+            System.out.println(entry.toTabulatedCSVFormatString());
+        }
+        System.out.println("--------------end----------------");
+        System.out.println("Print CSV to Tabulated Format Done");
     }
+
+    public void printCSV_toCompact(String targetFilePath) {
+        System.out.println("Print CSV to Compact Format from: " + targetFilePath);
+        System.out.println("-------------start---------------");
+        List<Entry> res = csvReader.parseCSV(targetFilePath);
+        for (Entry entry : res) {
+            System.out.println(entry.toTrimmedCSVFormatString());
+        }
+        System.out.println("--------------end----------------");
+        System.out.println("Print CSV to Compact Format Done");
+    }
+
+    public void printCSV_toRaw(String targetFilePath) {
+        System.out.println("Print CSV as Raw Format from: " + targetFilePath);
+        System.out.println("-------------start---------------");
+        List<Entry> res = csvReader.parseCSV(targetFilePath);
+        for (Entry entry : res) {
+            System.out.println(entry.toRawCSVFormatString());
+        }
+        System.out.println("--------------end----------------");
+        System.out.println("Print CSV as Raw Format Done");
+    }
+
 }

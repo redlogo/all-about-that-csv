@@ -64,6 +64,11 @@ public class Entry implements Interfaces.Entry {
     }
 
     @Override
+    public String toTabulatedCSVFormatString() {
+        return null;
+    }
+
+    @Override
     public String genSpaces() {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();

@@ -17,7 +17,7 @@ public class CSVReader {
 
     }
 
-    public List<Entry> readCSVWithHeader(String path) {
+    public List<Entry> parseCSV(String path) {
         List<Entry> res = new ArrayList<>();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(path)));
@@ -64,7 +64,7 @@ public class CSVReader {
                 }
                 // create Entry
                 Entry entry = new Entry();
-                entry.addToContent(list);
+                entry.addToContents(list);
                 // add to res
                 res.add(entry);
             }
