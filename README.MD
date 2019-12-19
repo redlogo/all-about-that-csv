@@ -9,10 +9,10 @@ API:
 AboutCSV aboutCSV = new AboutCSV();
 
 // generate random CSV API:
-aboutCSV.genCSV().genAddressBookRaw(numOfEntries, targetFilePath);
-                 .genAddressBookTrimmed(numOfEntries, targetFilePath);
-                 .genHarryPotterRaw(numOfEntries, targetFilePath);
-                 .genHarryPotterTrimmed(numOfEntries, targetFilePath);
+aboutCSV.genCSV().genAddressBook_toRaw(numOfEntries, targetFilePath);
+                 .genAddressBook_toCompact(numOfEntries, targetFilePath);
+                 .genHarryPotter_toRaw(numOfEntries, targetFilePath);
+                 .genHarryPotter_toCompact(numOfEntries, targetFilePath);
 
 // read and print CSV API:
 aboutCSV.readCSV().printCSV_toRaw(targetFilePath);
