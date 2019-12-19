@@ -43,7 +43,7 @@ Angella,Leffler,888-744-5550,Macejkovic Crest,Pollichborough,Kentucky,40845,Bosn
 --------------end----------------
 Print CSV to Compact Format Done
 
-Tabulated:
+Tabulated (nicely spaced by whitespaces, not tabs):
 Print CSV to Tabulated Format from: /Users/jibinzou/Documents/all-about-that-csv/files/input/testCSVFile1.csv
 -------------start---------------
  firstName , lastName            , phoneNumber           , streetName       , city               , state          , zipCode    , country                
@@ -59,6 +59,12 @@ Print CSV to Tabulated Format from: /Users/jibinzou/Documents/all-about-that-csv
  Angella   , Leffler             , 888-744-5550          , Macejkovic Crest , Pollichborough     , Kentucky       , 40845      , Bosnia and Herzegovina 
 --------------end----------------
 Print CSV to Tabulated Format Done
+```
+CSV Parsing Criteria:
+```
+// pattern inside of arrows ->,<whitespaces and tabs>"xxxxxx"<whitespaces and tabs>,<-
+// will be treated as one cell of CSV
+Pattern.compile(",[ \t]*?\".*?\"[ \t]*?(,|$)")
 ```
 ## Coding Style
 General Java Coding style
