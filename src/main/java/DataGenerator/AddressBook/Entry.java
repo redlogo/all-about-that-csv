@@ -4,7 +4,7 @@ import Utilities.TrimmingUtilities;
 
 import java.util.Random;
 
-public class Entry implements DataGenerator.Interfaces.Entry {
+public class Entry implements Interfaces.Entry {
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -84,7 +84,6 @@ public class Entry implements DataGenerator.Interfaces.Entry {
         this.country = country;
     }
 
-    @Override
     public void trim() {
         firstName = trimmingUtilities.trim(firstName);
         lastName = trimmingUtilities.trim(lastName);

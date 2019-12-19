@@ -4,7 +4,7 @@ import Utilities.TrimmingUtilities;
 
 import java.util.Random;
 
-public class Entry implements DataGenerator.Interfaces.Entry {
+public class Entry implements Interfaces.Entry {
     private String book;
     private String character;
     private String location;
@@ -48,7 +48,6 @@ public class Entry implements DataGenerator.Interfaces.Entry {
         this.quote = quote;
     }
 
-    @Override
     public void trim() {
         book = trimmingUtilities.trim(book);
         character = trimmingUtilities.trim(character);

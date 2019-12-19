@@ -7,5 +7,7 @@ public class ReadCSV {
         csvReader = new CSVReader();
     }
 
-
+    public void readCSVWithHeader(String targetFilePath) {
+        csvReader.readCSVWithHeader(targetFilePath);
+    }
 }

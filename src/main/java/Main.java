@@ -8,6 +8,6 @@ public class Main {
         aboutCSV.genCSV().genAddressBookRaw(1000, pathManager.getOutputTestCSVFile1());
         aboutCSV.genCSV().genHarryPotterRaw(1000, pathManager.getOutputTestCSVFile2());
 
-        aboutCSV.readCSV();
+        aboutCSV.readCSV().readCSVWithHeader(pathManager.getTmp_testCSVFile1());
     }
 }

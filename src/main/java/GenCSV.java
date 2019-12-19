@@ -1,5 +1,5 @@
-import DataGenerator.Interfaces.Entry;
 import FileWriter.CSVWriter;
+import Interfaces.Entry;
 
 import java.util.ArrayList;
 import java.util.List;

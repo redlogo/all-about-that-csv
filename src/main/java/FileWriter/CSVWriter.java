@@ -1,6 +1,6 @@
 package FileWriter;
 
-import DataGenerator.Interfaces.Entry;
+import Interfaces.Entry;
 
 import java.io.File;
 import java.io.FileWriter;
